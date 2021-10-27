@@ -34,8 +34,6 @@ def match_ends(words):
     lt = len(list(even_numbers))
     return lt
 
-    testes
-
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
 def test(f, in_, expected):
