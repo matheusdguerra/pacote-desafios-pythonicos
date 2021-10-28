@@ -11,9 +11,17 @@ Dica: Use uma custom key= function para extrair o ultimo elemento de cada tupla.
 """
 def sort_last(tuples):
     # +++ SUA SOLUÇÃO +++
-    tuples = sorted(tuples, key=lambda x: x[1])
+    #tuples = sorted(tuples, key=lambda x: x[1])
+    #return tuples
 
-    return tuples
+
+    # def last_element(t):
+    #     return t[-1]
+    # tuples.sort(key=last_element)
+    # return tuples
+
+    def __getitem__(self, t[1]):
+        return self.__lista[item]
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
