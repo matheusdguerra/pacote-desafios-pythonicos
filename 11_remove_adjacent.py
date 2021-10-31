@@ -9,8 +9,41 @@ Irá retornar: [1, 2, 3]
 """
 
 def remove_adjacent(nums):
-    # +++ SUA SOLUÇÃO +++
-    return
+    lista = []
+    for x in nums:
+        if x != nums[1]:
+            lista.append(x)
+    return lista
+
+###############################################################
+def findAdjacentElements(test_list):
+    res = []
+    for idx, ele in enumerate(test_list):
+
+        if idx == 0:
+            if test_list[idx] != test_list[idx + 1]:
+                res.append(test_list[idx])
+
+        elif idx == len(test_list) - 1:
+            if test_list[idx] != test_list[idx - 1]:
+                res.append(test_list[idx])
+
+        elif test_list[idx] != test_list[idx + 1]:
+            res.append(test_list[idx])
+
+    return res
+
+
+# Initializing list
+input_list = [2, 2, 7, 3, 3, 3, 4, 4, 9, 9]
+
+# printing result
+print("The Adjacent elements list:", findAdjacentElements(input_list))
+
+
+###############################################################
+
+
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
