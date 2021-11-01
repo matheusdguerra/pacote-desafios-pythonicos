@@ -13,11 +13,7 @@ def remove_adjacent(nums):
         res = []
         for idx, ele in enumerate(nums):
 
-            if idx == 0:
-                if nums[idx] != nums[idx + 1]:
-                    res.append(nums[idx])
-
-            elif idx == len(nums) - 1:
+            if idx == len(nums) - 1:
                 if nums[idx] == nums[idx - 1]:
                     res.append(nums[idx - 1])
                 else:
