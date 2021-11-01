@@ -53,10 +53,89 @@ e conferindo cada etapa do seu progresso.
 
 import sys
 
+from operator import itemgetter
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
+def print_words(filename):
 
+    # Lê arquivo TXT
+    arquivo = open('letras.txt', 'r')
+    lista = arquivo.readlines()
+    lista_repalce = []
+
+    # Remove \n
+    for string in lista:
+        new_string = string.replace("\n", "")
+        lista_repalce.append(new_string)
+
+    # lower em todos os caracteres
+    for i in range(len(lista_repalce)):
+        lista_repalce[i] = lista_repalce[i].lower()
+
+    # Converte lista em string
+    lista_srt = ''.join(lista_repalce)
+
+    # Remove ',' e espaço em branco
+    # Gera string final
+    lista_srt = lista_srt.replace(",", "").replace(" ","")
+
+    # Coleta distinct da string
+    # Ordena distinct em ordem alfabetica
+    distinct_char = "".join(set(lista_srt))
+    sorted_characters = sorted(distinct_char)
+    a_string = "".join(sorted_characters)
+
+    for char in a_string:
+        x = lista_srt.count(char)
+        print(char, x)
+
+    arquivo.close()
+
+
+def print_top(filename):
+    # Lê arquivo TXT
+    arquivo = open('letras.txt', 'r')
+    lista = arquivo.readlines()
+    lista_repalce = []
+
+    # Remove \n
+    for string in lista:
+        new_string = string.replace("\n", "")
+        lista_repalce.append(new_string)
+
+    # lower em todos os caracteres
+    for i in range(len(lista_repalce)):
+        lista_repalce[i] = lista_repalce[i].lower()
+
+    # Converte lista em string
+    lista_srt = ''.join(lista_repalce)
+
+    # Remove ',' e espaço em branco
+    # Gera string final
+    lista_srt = lista_srt.replace(",", "").replace(" ","")
+    print(lista_srt)
+
+    # Coleta distinct da string
+    distinct_char = "".join(set(lista_srt))
+    print(distinct_char)
+
+    # conta char e cria dicionario
+    lista=[]
+    for char in distinct_char:
+        x = lista_srt.count(char)
+        lista2 = (char, x)
+        lista.append(lista2)
+
+    lista_final = sorted(lista, key=itemgetter(1), reverse=True)
+
+    for x in lista_final:
+        print(x)
+
+    arquivo.close()
+    # b 4
+    # c 3
+    # a 2
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
 # parêtros do programa.
