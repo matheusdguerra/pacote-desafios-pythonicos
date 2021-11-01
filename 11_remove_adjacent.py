@@ -10,17 +10,18 @@ Irá retornar: [1, 2, 3]
 
 def remove_adjacent(nums):
 
-    res = []
+    # res = []
+    # for idx, ele in enumerate(nums):
+    #     if idx == len(nums) - 1:
+    #         if nums[idx] == nums[idx - 1]:
+    #             res.append(nums[idx - 1])
+    #         else:
+    #             res.append(nums[idx])
+    #     elif nums[idx] != nums[idx + 1]:
+    #         res.append(nums[idx])
+    # return (res)
 
-    for idx, ele in enumerate(nums):
-        if idx == len(nums) - 1:
-            if nums[idx] == nums[idx - 1]:
-                res.append(nums[idx - 1])
-            else:
-                res.append(nums[idx])
-        elif nums[idx] != nums[idx + 1]:
-            res.append(nums[idx])
-    return (res)
+
 
     # +++ SUA SOLUÇÃO +++
     # final_list = []
@@ -29,6 +30,19 @@ def remove_adjacent(nums):
     #         final_list.append(num)
     # return final_list
 
+
+    #if not nums:
+    #    return []
+    #l = [nums[0]]
+    #for c, n in zip(nums[:-1], nums[1:]):
+    #    if c != n:
+    #        l.append(n)
+    #return l
+
+
+    if not nums:
+        return []
+    return [nums[0]] + [n for c, n in zip(nums[:-1], nums[1:]) if c != n]
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
